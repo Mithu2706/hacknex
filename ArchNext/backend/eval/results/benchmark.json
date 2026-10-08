@@ -1,0 +1,966 @@
+{
+ "dataset": {
+  "kind": "synthetic",
+  "label": "Synthetic benchmark — 20 generated floor plans. Results do not establish real-world accuracy.",
+  "count": 20,
+  "seeds": [
+   100,
+   119
+  ],
+  "generator": "eval/synth.py",
+  "description": "Generated plans in one drafting style with injected wall breaks, junction gaps and speckle noise; exact ground truth for rooms, doors, windows and scale."
+ },
+ "parser": "OpenCV structural parser (identical in all configurations)",
+ "parser_id": "opencv-structural-v1",
+ "configs": [
+  {
+   "key": "baseline",
+   "label": "Baseline",
+   "topology_guard": false,
+   "scale_lock": false
+  },
+  {
+   "key": "topologyguard_only",
+   "label": "TopologyGuard only",
+   "topology_guard": true,
+   "scale_lock": false
+  },
+  {
+   "key": "scalelock_only",
+   "label": "ScaleLock only",
+   "topology_guard": false,
+   "scale_lock": true
+  },
+  {
+   "key": "full",
+   "label": "Full ArchNext",
+   "topology_guard": true,
+   "scale_lock": true
+  }
+ ],
+ "results": {
+  "baseline": {
+   "room_recall": 0.337,
+   "room_recall_n": 20,
+   "room_precision": 0.6625,
+   "room_precision_n": 20,
+   "room_iou_matched": 0.6393,
+   "room_iou_matched_n": 20,
+   "room_iou_all": 0.2876,
+   "room_iou_all_n": 20,
+   "room_type_accuracy": 0.8767,
+   "room_type_accuracy_n": 15,
+   "dimension_error_pct": 15.5386,
+   "dimension_error_pct_n": 15,
+   "scale_error_pct": 3.209,
+   "scale_error_pct_n": 20,
+   "structural_consistency": 0.9014,
+   "structural_consistency_n": 20,
+   "doors": {
+    "tp": 183,
+    "predicted": 184,
+    "actual": 185,
+    "precision": 0.9946,
+    "recall": 0.9892,
+    "f1": 0.9919
+   },
+   "windows": {
+    "tp": 177,
+    "predicted": 177,
+    "actual": 181,
+    "precision": 1.0,
+    "recall": 0.9779,
+    "f1": 0.9888
+   },
+   "auto_scaled_plans": 0
+  },
+  "topologyguard_only": {
+   "room_recall": 0.9631,
+   "room_recall_n": 20,
+   "room_precision": 0.9917,
+   "room_precision_n": 20,
+   "room_iou_matched": 0.9756,
+   "room_iou_matched_n": 20,
+   "room_iou_all": 0.9404,
+   "room_iou_all_n": 20,
+   "room_type_accuracy": 0.9762,
+   "room_type_accuracy_n": 20,
+   "dimension_error_pct": 4.6753,
+   "dimension_error_pct_n": 20,
+   "scale_error_pct": 3.3148,
+   "scale_error_pct_n": 20,
+   "structural_consistency": 0.9912,
+   "structural_consistency_n": 20,
+   "doors": {
+    "tp": 183,
+    "predicted": 184,
+    "actual": 185,
+    "precision": 0.9946,
+    "recall": 0.9892,
+    "f1": 0.9919
+   },
+   "windows": {
+    "tp": 177,
+    "predicted": 177,
+    "actual": 181,
+    "precision": 1.0,
+    "recall": 0.9779,
+    "f1": 0.9888
+   },
+   "auto_scaled_plans": 0
+  },
+  "scalelock_only": {
+   "room_recall": 0.337,
+   "room_recall_n": 20,
+   "room_precision": 0.6625,
+   "room_precision_n": 20,
+   "room_iou_matched": 0.6393,
+   "room_iou_matched_n": 20,
+   "room_iou_all": 0.2876,
+   "room_iou_all_n": 20,
+   "room_type_accuracy": 0.8767,
+   "room_type_accuracy_n": 15,
+   "dimension_error_pct": 13.7304,
+   "dimension_error_pct_n": 15,
+   "scale_error_pct": 1.4241,
+   "scale_error_pct_n": 20,
+   "structural_consistency": 0.9014,
+   "structural_consistency_n": 20,
+   "doors": {
+    "tp": 183,
+    "predicted": 184,
+    "actual": 185,
+    "precision": 0.9946,
+    "recall": 0.9892,
+    "f1": 0.9919
+   },
+   "windows": {
+    "tp": 177,
+    "predicted": 177,
+    "actual": 181,
+    "precision": 1.0,
+    "recall": 0.9779,
+    "f1": 0.9888
+   },
+   "auto_scaled_plans": 14
+  },
+  "full": {
+   "room_recall": 0.9631,
+   "room_recall_n": 20,
+   "room_precision": 0.9917,
+   "room_precision_n": 20,
+   "room_iou_matched": 0.9756,
+   "room_iou_matched_n": 20,
+   "room_iou_all": 0.9404,
+   "room_iou_all_n": 20,
+   "room_type_accuracy": 0.9762,
+   "room_type_accuracy_n": 20,
+   "dimension_error_pct": 1.1216,
+   "dimension_error_pct_n": 20,
+   "scale_error_pct": 0.6806,
+   "scale_error_pct_n": 20,
+   "structural_consistency": 0.9912,
+   "structural_consistency_n": 20,
+   "doors": {
+    "tp": 183,
+    "predicted": 184,
+    "actual": 185,
+    "precision": 0.9946,
+    "recall": 0.9892,
+    "f1": 0.9919
+   },
+   "windows": {
+    "tp": 177,
+    "predicted": 177,
+    "actual": 181,
+    "precision": 1.0,
+    "recall": 0.9779,
+    "f1": 0.9888
+   },
+   "auto_scaled_plans": 20
+  }
+ },
+ "per_plan": [
+  {
+   "seed": 100,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 5,
+   "baseline": {
+    "room_recall": 0.2857,
+    "room_iou_all": 0.279,
+    "dimension_error_pct": 2.077,
+    "scale_error_pct": 0.927,
+    "structural_consistency": 0.875,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 0.7143,
+    "room_iou_all": 0.7002,
+    "dimension_error_pct": 1.801,
+    "scale_error_pct": 0.927,
+    "structural_consistency": 0.9667,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.2857,
+    "room_iou_all": 0.279,
+    "dimension_error_pct": 0.493,
+    "scale_error_pct": 0.895,
+    "structural_consistency": 0.875,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 0.7143,
+    "room_iou_all": 0.7002,
+    "dimension_error_pct": 0.372,
+    "scale_error_pct": 0.719,
+    "structural_consistency": 0.9667,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 101,
+   "units": "imperial",
+   "rooms": 7,
+   "defects": 4,
+   "baseline": {
+    "room_recall": 0.4286,
+    "room_iou_all": 0.3865,
+    "dimension_error_pct": 15.63,
+    "scale_error_pct": 2.574,
+    "structural_consistency": 0.9219,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9818,
+    "dimension_error_pct": 3.394,
+    "scale_error_pct": 2.574,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.4286,
+    "room_iou_all": 0.3865,
+    "dimension_error_pct": 14.076,
+    "scale_error_pct": 0.559,
+    "structural_consistency": 0.9219,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9818,
+    "dimension_error_pct": 0.31,
+    "scale_error_pct": 0.597,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 102,
+   "units": "metric",
+   "rooms": 9,
+   "defects": 6,
+   "baseline": {
+    "room_recall": 0.3333,
+    "room_iou_all": 0.3265,
+    "dimension_error_pct": 5.709,
+    "scale_error_pct": 4.725,
+    "structural_consistency": 0.9143,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9827,
+    "dimension_error_pct": 5.46,
+    "scale_error_pct": 4.725,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.3333,
+    "room_iou_all": 0.3265,
+    "dimension_error_pct": 0.255,
+    "scale_error_pct": 0.915,
+    "structural_consistency": 0.9143,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9827,
+    "dimension_error_pct": 0.338,
+    "scale_error_pct": 0.645,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 103,
+   "units": "metric",
+   "rooms": 5,
+   "defects": 4,
+   "baseline": {
+    "room_recall": 0.2,
+    "room_iou_all": 0.11,
+    "dimension_error_pct": 39.365,
+    "scale_error_pct": 6.067,
+    "structural_consistency": 0.9318,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9869,
+    "dimension_error_pct": 6.523,
+    "scale_error_pct": 6.067,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.2,
+    "room_iou_all": 0.11,
+    "dimension_error_pct": 39.365,
+    "scale_error_pct": 6.067,
+    "structural_consistency": 0.9318,
+    "scale_method": "estimated"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9869,
+    "dimension_error_pct": 0.253,
+    "scale_error_pct": 0.378,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 104,
+   "units": "imperial",
+   "rooms": 5,
+   "defects": 6,
+   "baseline": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 0.02,
+    "structural_consistency": 0.875,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9851,
+    "dimension_error_pct": 0.711,
+    "scale_error_pct": 0.02,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 0.02,
+    "structural_consistency": 0.875,
+    "scale_method": "estimated"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9851,
+    "dimension_error_pct": 0.18,
+    "scale_error_pct": 0.773,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 105,
+   "units": "imperial",
+   "rooms": 7,
+   "defects": 3,
+   "baseline": {
+    "room_recall": 0.5714,
+    "room_iou_all": 0.4275,
+    "dimension_error_pct": 24.606,
+    "scale_error_pct": 2.36,
+    "structural_consistency": 0.9194,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9764,
+    "dimension_error_pct": 3.23,
+    "scale_error_pct": 2.36,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.5714,
+    "room_iou_all": 0.4275,
+    "dimension_error_pct": 24.595,
+    "scale_error_pct": 0.421,
+    "structural_consistency": 0.9194,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9764,
+    "dimension_error_pct": 0.566,
+    "scale_error_pct": 0.68,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 106,
+   "units": "metric",
+   "rooms": 6,
+   "defects": 4,
+   "baseline": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 2.817,
+    "structural_consistency": 0.8889,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9819,
+    "dimension_error_pct": 3.512,
+    "scale_error_pct": 2.817,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 2.817,
+    "structural_consistency": 0.8889,
+    "scale_method": "estimated"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9819,
+    "dimension_error_pct": 0.363,
+    "scale_error_pct": 0.835,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 107,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 2,
+   "baseline": {
+    "room_recall": 0.5714,
+    "room_iou_all": 0.5216,
+    "dimension_error_pct": 13.089,
+    "scale_error_pct": 1.535,
+    "structural_consistency": 0.9355,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.983,
+    "dimension_error_pct": 2.118,
+    "scale_error_pct": 1.535,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.5714,
+    "room_iou_all": 0.5216,
+    "dimension_error_pct": 12.108,
+    "scale_error_pct": 0.799,
+    "structural_consistency": 0.9355,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.983,
+    "dimension_error_pct": 0.432,
+    "scale_error_pct": 0.437,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 108,
+   "units": "imperial",
+   "rooms": 7,
+   "defects": 2,
+   "baseline": {
+    "room_recall": 0.7143,
+    "room_iou_all": 0.5886,
+    "dimension_error_pct": 19.448,
+    "scale_error_pct": 0.604,
+    "structural_consistency": 0.9219,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 0.8571,
+    "room_iou_all": 0.7769,
+    "dimension_error_pct": 10.665,
+    "scale_error_pct": 2.721,
+    "structural_consistency": 0.9677,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.7143,
+    "room_iou_all": 0.5886,
+    "dimension_error_pct": 19.7,
+    "scale_error_pct": 0.934,
+    "structural_consistency": 0.9219,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 0.8571,
+    "room_iou_all": 0.7769,
+    "dimension_error_pct": 8.464,
+    "scale_error_pct": 0.81,
+    "structural_consistency": 0.9677,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 109,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 4,
+   "baseline": {
+    "room_recall": 0.2857,
+    "room_iou_all": 0.2793,
+    "dimension_error_pct": 3.137,
+    "scale_error_pct": 2.027,
+    "structural_consistency": 0.9138,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 0.8571,
+    "room_iou_all": 0.776,
+    "dimension_error_pct": 10.169,
+    "scale_error_pct": 2.027,
+    "structural_consistency": 0.9821,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.2857,
+    "room_iou_all": 0.2793,
+    "dimension_error_pct": 0.341,
+    "scale_error_pct": 1.214,
+    "structural_consistency": 0.9138,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 0.8571,
+    "room_iou_all": 0.776,
+    "dimension_error_pct": 8.56,
+    "scale_error_pct": 0.981,
+    "structural_consistency": 0.9821,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 110,
+   "units": "imperial",
+   "rooms": 4,
+   "defects": 4,
+   "baseline": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 1.093,
+    "structural_consistency": 0.8409,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9854,
+    "dimension_error_pct": 1.616,
+    "scale_error_pct": 1.093,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 1.093,
+    "structural_consistency": 0.8409,
+    "scale_method": "estimated"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9854,
+    "dimension_error_pct": 0.236,
+    "scale_error_pct": 0.445,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 111,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 2,
+   "baseline": {
+    "room_recall": 0.7143,
+    "room_iou_all": 0.6353,
+    "dimension_error_pct": 9.325,
+    "scale_error_pct": 0.828,
+    "structural_consistency": 0.9219,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9803,
+    "dimension_error_pct": 0.29,
+    "scale_error_pct": 0.828,
+    "structural_consistency": 0.9833,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.7143,
+    "room_iou_all": 0.6353,
+    "dimension_error_pct": 9.41,
+    "scale_error_pct": 0.447,
+    "structural_consistency": 0.9219,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9803,
+    "dimension_error_pct": 0.286,
+    "scale_error_pct": 0.982,
+    "structural_consistency": 0.9833,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 112,
+   "units": "imperial",
+   "rooms": 7,
+   "defects": 3,
+   "baseline": {
+    "room_recall": 0.5714,
+    "room_iou_all": 0.4566,
+    "dimension_error_pct": 17.283,
+    "scale_error_pct": 2.46,
+    "structural_consistency": 0.9242,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9854,
+    "dimension_error_pct": 3.176,
+    "scale_error_pct": 2.46,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.5714,
+    "room_iou_all": 0.4566,
+    "dimension_error_pct": 16.514,
+    "scale_error_pct": 0.763,
+    "structural_consistency": 0.9242,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9854,
+    "dimension_error_pct": 0.284,
+    "scale_error_pct": 0.763,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 113,
+   "units": "metric",
+   "rooms": 4,
+   "defects": 3,
+   "baseline": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 4.818,
+    "structural_consistency": 0.881,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9851,
+    "dimension_error_pct": 5.532,
+    "scale_error_pct": 4.818,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 4.818,
+    "structural_consistency": 0.881,
+    "scale_method": "estimated"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9851,
+    "dimension_error_pct": 0.235,
+    "scale_error_pct": 0.576,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 114,
+   "units": "metric",
+   "rooms": 5,
+   "defects": 4,
+   "baseline": {
+    "room_recall": 0.2,
+    "room_iou_all": 0.1973,
+    "dimension_error_pct": 13.138,
+    "scale_error_pct": 12.786,
+    "structural_consistency": 0.8571,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9877,
+    "dimension_error_pct": 13.221,
+    "scale_error_pct": 12.786,
+    "structural_consistency": 0.975,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.2,
+    "room_iou_all": 0.1973,
+    "dimension_error_pct": 0.31,
+    "scale_error_pct": 0.094,
+    "structural_consistency": 0.8571,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9877,
+    "dimension_error_pct": 0.243,
+    "scale_error_pct": 0.409,
+    "structural_consistency": 0.975,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 115,
+   "units": "imperial",
+   "rooms": 5,
+   "defects": 4,
+   "baseline": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 5.021,
+    "structural_consistency": 0.84,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9845,
+    "dimension_error_pct": 5.573,
+    "scale_error_pct": 5.021,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.0,
+    "room_iou_all": 0.0,
+    "dimension_error_pct": null,
+    "scale_error_pct": 5.021,
+    "structural_consistency": 0.84,
+    "scale_method": "estimated"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9845,
+    "dimension_error_pct": 0.266,
+    "scale_error_pct": 0.667,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 116,
+   "units": "metric",
+   "rooms": 6,
+   "defects": 4,
+   "baseline": {
+    "room_recall": 0.3333,
+    "room_iou_all": 0.2503,
+    "dimension_error_pct": 21.285,
+    "scale_error_pct": 3.938,
+    "structural_consistency": 0.8793,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9897,
+    "dimension_error_pct": 4.414,
+    "scale_error_pct": 3.938,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.3333,
+    "room_iou_all": 0.2503,
+    "dimension_error_pct": 22.172,
+    "scale_error_pct": 0.067,
+    "structural_consistency": 0.8793,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9897,
+    "dimension_error_pct": 0.236,
+    "scale_error_pct": 0.364,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 117,
+   "units": "metric",
+   "rooms": 6,
+   "defects": 3,
+   "baseline": {
+    "room_recall": 0.3333,
+    "room_iou_all": 0.2477,
+    "dimension_error_pct": 22.499,
+    "scale_error_pct": 2.177,
+    "structural_consistency": 0.9074,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 0.8333,
+    "room_iou_all": 0.8201,
+    "dimension_error_pct": 2.893,
+    "scale_error_pct": 2.177,
+    "structural_consistency": 0.963,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.3333,
+    "room_iou_all": 0.2477,
+    "dimension_error_pct": 23.071,
+    "scale_error_pct": 0.314,
+    "structural_consistency": 0.9074,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 0.8333,
+    "room_iou_all": 0.8201,
+    "dimension_error_pct": 0.13,
+    "scale_error_pct": 0.751,
+    "structural_consistency": 0.963,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 118,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 3,
+   "baseline": {
+    "room_recall": 0.5714,
+    "room_iou_all": 0.499,
+    "dimension_error_pct": 13.128,
+    "scale_error_pct": 3.552,
+    "structural_consistency": 0.95,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9774,
+    "dimension_error_pct": 4.555,
+    "scale_error_pct": 3.552,
+    "structural_consistency": 1.0,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.5714,
+    "room_iou_all": 0.499,
+    "dimension_error_pct": 11.559,
+    "scale_error_pct": 0.553,
+    "structural_consistency": 0.95,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9774,
+    "dimension_error_pct": 0.439,
+    "scale_error_pct": 1.039,
+    "structural_consistency": 1.0,
+    "scale_method": "automatic"
+   }
+  },
+  {
+   "seed": 119,
+   "units": "metric",
+   "rooms": 8,
+   "defects": 4,
+   "baseline": {
+    "room_recall": 0.625,
+    "room_iou_all": 0.546,
+    "dimension_error_pct": 13.36,
+    "scale_error_pct": 3.851,
+    "structural_consistency": 0.9286,
+    "scale_method": "estimated"
+   },
+   "topologyguard_only": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9818,
+    "dimension_error_pct": 4.654,
+    "scale_error_pct": 3.851,
+    "structural_consistency": 0.9853,
+    "scale_method": "estimated"
+   },
+   "scalelock_only": {
+    "room_recall": 0.625,
+    "room_iou_all": 0.546,
+    "dimension_error_pct": 11.987,
+    "scale_error_pct": 0.671,
+    "structural_consistency": 0.9286,
+    "scale_method": "automatic"
+   },
+   "full": {
+    "room_recall": 1.0,
+    "room_iou_all": 0.9818,
+    "dimension_error_pct": 0.238,
+    "scale_error_pct": 0.762,
+    "structural_consistency": 0.9853,
+    "scale_method": "automatic"
+   }
+  }
+ ],
+ "definitions": {
+  "room_recall": "Share of true rooms matched by a detected room with IoU >= 0.5.",
+  "room_precision": "Share of detected rooms that match a true room (IoU >= 0.5).",
+  "room_iou_all": "Mean overlap (intersection over union) per true room; unmatched rooms count as 0.",
+  "room_iou_matched": "Mean overlap of matched rooms only.",
+  "room_type_accuracy": "Share of matched rooms whose type (bedroom, kitchen, ...) is correct.",
+  "dimension_error_pct": "Mean relative error of matched room length and width in metres.",
+  "scale_error_pct": "Relative error of the metres-per-pixel scale.",
+  "structural_consistency": "Share of wall ends connected to another wall or an opening.",
+  "doors_f1": "Door detection F1 (micro-averaged over all plans), centre within half a door width.",
+  "windows_f1": "Window detection F1 (micro-averaged over all plans)."
+ },
+ "notes": {
+  "scale": "Configurations without ScaleLock use the estimated scale (typical door width), so their scale and dimension errors measure that fallback."
+ },
+ "reproducibility": {
+  "verified": true,
+  "identical": true
+ },
+ "generated_at": "2026-10-08T11:04:48+00:00",
+ "seconds": 145.9
+}
