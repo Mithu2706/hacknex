@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+@layer components {
+  .card { @apply bg-panel border border-line rounded-xl shadow-card; }
+  .card-title { @apply text-[13px] font-semibold text-ink tracking-tight; }
+  .label { @apply text-[11px] font-medium uppercase tracking-wider text-ink-mute; }
+  .btn { @apply inline-flex items-center justify-center gap-2 h-9 px-3.5 rounded-lg text-[13px] font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-accent text-white hover:bg-accent-dark; }
+  .btn-secondary { @apply btn bg-white border border-line text-ink hover:bg-paper; }
+  .btn-ghost { @apply btn text-ink-soft hover:bg-paper; }
+  .btn-sm { @apply h-8 px-2.5 text-[12px]; }
+  .chip { @apply inline-flex items-center gap-1 whitespace-nowrap h-6 px-2 rounded-md text-[11px] font-medium; }
+  .seg { @apply inline-flex p-0.5 bg-paper border border-line rounded-lg; }
+  .seg button { @apply h-7 px-2.5 rounded-md text-[12px] font-medium text-ink-soft transition-colors; }
+  .seg button[data-active='true'] { @apply bg-white text-ink shadow-card border border-line; }
+  .input { @apply h-9 px-3 rounded-lg border border-line bg-white text-[13px] focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent; }
+  .table { @apply w-full text-[12.5px]; }
+  .table th { @apply text-left font-medium text-ink-mute text-[11px] uppercase tracking-wider py-2 px-3 border-b border-line; }
+  .table td { @apply py-2 px-3 border-b border-line/70 text-ink-soft; }
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #dcd7ce; border-radius: 8px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+
+@keyframes pulse-ring { 0% { opacity: 0.9 } 50% { opacity: 0.25 } 100% { opacity: 0.9 } }
+.pulse { animation: pulse-ring 1.4s ease-in-out infinite; }

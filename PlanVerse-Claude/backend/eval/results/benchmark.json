@@ -1,0 +1,261 @@
+{
+ "count": 20,
+ "parser": "OpenCV structural parser (identical in both columns)",
+ "baseline": {
+  "room_recall": 0.337,
+  "room_precision": 0.6625,
+  "room_iou_matched": 0.6393,
+  "room_iou_all": 0.2876,
+  "room_type_accuracy": 0.8767,
+  "dimension_error_pct": 15.5386,
+  "scale_error_pct": 3.209,
+  "structural_consistency": 0.9014,
+  "doors": {
+   "tp": 183,
+   "predicted": 184,
+   "actual": 185,
+   "precision": 0.9946,
+   "recall": 0.9892,
+   "f1": 0.9919
+  },
+  "windows": {
+   "tp": 177,
+   "predicted": 177,
+   "actual": 181,
+   "precision": 1.0,
+   "recall": 0.9779,
+   "f1": 0.9888
+  }
+ },
+ "planverse": {
+  "room_recall": 0.9631,
+  "room_precision": 0.9917,
+  "room_iou_matched": 0.9756,
+  "room_iou_all": 0.9404,
+  "room_type_accuracy": 0.9762,
+  "dimension_error_pct": 1.1216,
+  "scale_error_pct": 0.6806,
+  "structural_consistency": 0.9912,
+  "doors": {
+   "tp": 183,
+   "predicted": 184,
+   "actual": 185,
+   "precision": 0.9946,
+   "recall": 0.9892,
+   "f1": 0.9919
+  },
+  "windows": {
+   "tp": 177,
+   "predicted": 177,
+   "actual": 181,
+   "precision": 1.0,
+   "recall": 0.9779,
+   "f1": 0.9888
+  }
+ },
+ "auto_calibrated": 20,
+ "per_plan": [
+  {
+   "seed": 100,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 5,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.2857,
+   "planverse_room_recall": 0.7143,
+   "planverse_scale_error_pct": 0.719
+  },
+  {
+   "seed": 101,
+   "units": "imperial",
+   "rooms": 7,
+   "defects": 4,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.4286,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.597
+  },
+  {
+   "seed": 102,
+   "units": "metric",
+   "rooms": 9,
+   "defects": 6,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.3333,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.645
+  },
+  {
+   "seed": 103,
+   "units": "metric",
+   "rooms": 5,
+   "defects": 4,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.2,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.378
+  },
+  {
+   "seed": 104,
+   "units": "imperial",
+   "rooms": 5,
+   "defects": 6,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.0,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.773
+  },
+  {
+   "seed": 105,
+   "units": "imperial",
+   "rooms": 7,
+   "defects": 3,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.5714,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.68
+  },
+  {
+   "seed": 106,
+   "units": "metric",
+   "rooms": 6,
+   "defects": 4,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.0,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.835
+  },
+  {
+   "seed": 107,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 2,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.5714,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.437
+  },
+  {
+   "seed": 108,
+   "units": "imperial",
+   "rooms": 7,
+   "defects": 2,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.7143,
+   "planverse_room_recall": 0.8571,
+   "planverse_scale_error_pct": 0.81
+  },
+  {
+   "seed": 109,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 4,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.2857,
+   "planverse_room_recall": 0.8571,
+   "planverse_scale_error_pct": 0.981
+  },
+  {
+   "seed": 110,
+   "units": "imperial",
+   "rooms": 4,
+   "defects": 4,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.0,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.445
+  },
+  {
+   "seed": 111,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 2,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.7143,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.982
+  },
+  {
+   "seed": 112,
+   "units": "imperial",
+   "rooms": 7,
+   "defects": 3,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.5714,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.763
+  },
+  {
+   "seed": 113,
+   "units": "metric",
+   "rooms": 4,
+   "defects": 3,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.0,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.576
+  },
+  {
+   "seed": 114,
+   "units": "metric",
+   "rooms": 5,
+   "defects": 4,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.2,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.409
+  },
+  {
+   "seed": 115,
+   "units": "imperial",
+   "rooms": 5,
+   "defects": 4,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.0,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.667
+  },
+  {
+   "seed": 116,
+   "units": "metric",
+   "rooms": 6,
+   "defects": 4,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.3333,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.364
+  },
+  {
+   "seed": 117,
+   "units": "metric",
+   "rooms": 6,
+   "defects": 3,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.3333,
+   "planverse_room_recall": 0.8333,
+   "planverse_scale_error_pct": 0.751
+  },
+  {
+   "seed": 118,
+   "units": "metric",
+   "rooms": 7,
+   "defects": 3,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.5714,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 1.039
+  },
+  {
+   "seed": 119,
+   "units": "metric",
+   "rooms": 8,
+   "defects": 4,
+   "scale_status": "auto",
+   "baseline_room_recall": 0.625,
+   "planverse_room_recall": 1.0,
+   "planverse_scale_error_pct": 0.762
+  }
+ ],
+ "seconds": 28.5,
+ "note": "Generated plans are drawn in one conventional style with injected wall breaks and junction gaps; results on real-world plans will differ. Baseline uses an estimated scale because it has no ScaleLock."
+}
